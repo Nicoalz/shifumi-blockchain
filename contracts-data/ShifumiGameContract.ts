@@ -230,6 +230,7 @@ const shifumiContractAbi = [
     inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     name: 'games',
     outputs: [
+      { internalType: 'uint256', name: 'gameId', type: 'uint256' },
       { internalType: 'address', name: 'player1', type: 'address' },
       { internalType: 'address', name: 'player2', type: 'address' },
       { internalType: 'uint256', name: 'betAmount', type: 'uint256' },
@@ -263,6 +264,7 @@ const shifumiContractAbi = [
       { internalType: 'uint256[]', name: '', type: 'uint256[]' },
       {
         components: [
+          { internalType: 'uint256', name: 'gameId', type: 'uint256' },
           { internalType: 'address', name: 'player1', type: 'address' },
           { internalType: 'address', name: 'player2', type: 'address' },
           { internalType: 'uint256', name: 'betAmount', type: 'uint256' },
@@ -315,6 +317,7 @@ const shifumiContractAbi = [
       { internalType: 'uint256[]', name: '', type: 'uint256[]' },
       {
         components: [
+          { internalType: 'uint256', name: 'gameId', type: 'uint256' },
           { internalType: 'address', name: 'player1', type: 'address' },
           { internalType: 'address', name: 'player2', type: 'address' },
           { internalType: 'uint256', name: 'betAmount', type: 'uint256' },

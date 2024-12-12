@@ -10,42 +10,17 @@ const Header: React.FC = () => {
   const userAccount = useAccount();
   const { isConnected } = userAccount;
 
-  const linksUserConnected = [
+  const links = [
     {
       name: 'Home',
       route: '/',
     },
-    {
-      name: 'Create Lottery',
-      route: '/create-lottery',
-    },
-    {
-      name: 'Make a Draw',
-      route: '/make-draw',
-    },
-    {
-      name: 'My Tickets',
-      route: '/my-tickets',
-    },
   ];
-
-  const linksUserNotConnected = [
-    {
-      name: 'Home',
-      route: '/',
-    },
-    {
-      name: 'My Tickets',
-      route: '/my-tickets',
-    },
-  ];
-
-  const links = isConnected ? linksUserConnected : linksUserNotConnected;
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between w-full px-4 py-6 mb-12 md:px-10 backdrop-blur-lg bg-custom-dark-blue/70">
       <Link href="/" className="text-2xl font-bold gradient-text">
-        Web3 Lottery
+        Shifumi dapp
       </Link>
 
       <div
