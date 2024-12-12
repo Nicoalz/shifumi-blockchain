@@ -30,11 +30,12 @@ export default function GamePlay() {
     `0x${string}` | undefined
   >();
   const [isGameLoading, setIsGameLoading] = useState(true);
-  const { chainId } = useAccount();
+  const { chainId, address: userAddress } = useAccount();
 
   const {
     writeContract,
     isPending,
+    error,
     isSuccess,
     data: txHash,
   } = useWriteContract();
@@ -51,10 +52,14 @@ export default function GamePlay() {
     writeContract({
       abi: shifumiContract.abi,
       address: contractAddress,
-      functionName: 'createGame',
+      functionName: 'commitChoice',
       args: [currentGame?.gameId, commitment],
     });
   };
+
+  useEffect(() => {
+    console.log({ isPending, error, isSuccess, txHash });
+  }, [isPending, error, isSuccess, txHash]);
 
   useEffect(() => {
     if (isSuccess) {
@@ -120,6 +125,40 @@ export default function GamePlay() {
   if (isGameLoading) {
     return <Loader />;
   }
+
+  // if (
+  //   currentGame?.player1 === userAddress &&
+  //   currentGame?.player1 &&
+  //   !currentGame.player2Choice
+  // ) {
+  //   return (
+  //     <h3>
+  //       Waiting for player 2 to commit their choice. You can only commit your
+  //       choice once.
+  //     </h3>
+  //   );
+  // }
+
+  // if (
+  //   currentGame?.player2 === userAddress &&
+  //   currentGame?.player2 &&
+  //   !currentGame.player1Choice
+  // ) {
+  //   return (
+  //     <h3>
+  //       Waiting for player 2 to commit their choice. You can only commit your
+  //       choice once.
+  //     </h3>
+  //   );
+  // }
+
+  // if (currentGame?.status === GameStatusEnum.Committed) {
+  //   return (
+  //     <h3>
+  //       Both players have committed their choice. Waiting for the reveal phase.
+  //     </h3>
+  //   );
+  // }
 
   return (
     <div className="space-y-4">
