@@ -18,6 +18,7 @@ Si les joueurs font match nul, ils récupèrent leur mise.
 - Vérifié via etherscan, code disponible : https://sepolia.basescan.org/address/0xB5d3E134dA45B0eC05e7aC5fd054e700a76dfE80#code
 - Frontend en NextJS, TailwindCSS, Shadcn
 - Interaction wallet via RainbowKit
+- Test des fonctions Solidity via Hardhat
 
 ### A savoir:
 
