@@ -35,7 +35,8 @@ Si les joueurs font match nul, ils récupèrent leur mise.
 
 - Finir l'intégration du SC dans le front
 - Ajouter des fonctions pour simplifier le front, comme getMyGames, etc
--  Miser des ERC20 comme des stablecoins pour avoir une base de mise stable.
+- Miser des ERC20 comme des stablecoins pour avoir une base de mise stable.
+- Utilisation de la balance des joueurs pour rejouer s'ils ont de quoi jouer.
 - Ajout de la possibilité de jouer contre l'ordinateur, avec de l'aléatoire via un oracle (Chainlink VRF)
 - Création d'un token, qui pourrait avoir des avantages dans notre jeu.
   Par exemple si vous possédez et stakez notre tokens, vous pouvez avoir une réduction de fees, ou meme des bonus de gains.
