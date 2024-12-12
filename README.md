@@ -4,7 +4,7 @@ Projet de Shifumi on chain
 
 ### Stratégie:
 
-Jeu de betting en 1 contre 1, les joueurs misent une somme d'ETH identique, le gagnant remporte la somme des mises.
+Jeu de shifumi avec betting en 1 contre 1 on chain, les joueurs misent une somme d'ETH identique, le gagnant remporte la somme des mises.
 Si les joueurs font match nul, ils récupèrent leur mise.
 
 ### Modèle économique:
