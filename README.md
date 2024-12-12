@@ -25,7 +25,7 @@ Si les joueurs font match nul, ils récupèrent leur mise.
 - Gérer la "problématique" de la transparence du choix de l'adversaire :
   En effet, le choix de l'adversaire est stocké dans le contrat, et donc visible par tous.
   En consultant la blockchain, ou meme en simulant son choix (si le choix de l'adversaire est déjà fait), un joueur pourrait voir le choix de l'adversaire et choisir le sien en conséquence.
-  C'est pour cele que nous avons décidé dans un premier temps d'envoyer un hash du choix de l'adversaire, et de le révéler après que lorsque les deux joueurs ont fait leur choix.
+  C'est pour cele que nous avons décidé dans un premier temps d'envoyer un hash du choix de l'adversaire, et de le révéler uniquement lorsque les deux joueurs ont fait leur choix.
 
 - Reentrancy Attack :
   Pour éviter les attaques de type reentrancy, nous avons d'abord mis à jour la balance avant de transférer les fonds.
