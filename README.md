@@ -41,3 +41,5 @@ Si les joueurs font match nul, ils récupèrent leur mise.
 - Création d'un token, qui pourrait avoir des avantages dans notre jeu.
   Par exemple si vous possédez et stakez notre tokens, vous pouvez avoir une réduction de fees, ou meme des bonus de gains.
   Vous pourriez également voter pour des propositions de la communauté, etc.
+- Cross chain pour aggrandir la cible, puis sponsor des transactions pour limiter la frictions des users / 
+- On ramp pour top up en fiat
