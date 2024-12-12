@@ -35,5 +35,5 @@ export const INITIAL_CHAIN = baseSepolia;
 
 // in case of multiple chains
 export const chainIds = {
-  sepolia: baseSepolia.id,
+  baseSepolia: baseSepolia.id,
 };

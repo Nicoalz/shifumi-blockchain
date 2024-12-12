@@ -664,6 +664,6 @@ const contractsTemplateAddressSepolia =
 export const contractTemplate: TContract = {
   abi: contractsTemplateAbi,
   address: {
-    [chainIds.sepolia]: contractsTemplateAddressSepolia, // chainId => address
+    [chainIds.baseSepolia]: contractsTemplateAddressSepolia, // chainId => address
   },
 };

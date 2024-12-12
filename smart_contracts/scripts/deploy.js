@@ -3,15 +3,25 @@ const { ethers } = require('hardhat');
 const { exportAddresses } = require('./export-addresses');
 
 async function main() {
-  const LotteryPlatform = await ethers.getContractFactory('LotteryPlatform');
-  const lotteryPlatform = await LotteryPlatform.deploy();
+  const feeCollector = process.env.FEE_COLLECTOR;
 
-  await lotteryPlatform.waitForDeployment();
+  if (!feeCollector) {
+    throw new Error('FEE_COLLECTOR environment variable is not set.');
+  }
 
-  const address = await lotteryPlatform.getAddress();
+  console.log(
+    'Deploying ShifumiGame contract with feeCollector:',
+    feeCollector,
+  );
+  const ShifumiGame = await ethers.getContractFactory('ShifumiGame');
+  const shifumiGame = await ShifumiGame.deploy(feeCollector);
+
+  await shifumiGame.waitForDeployment();
+
+  const address = await shifumiGame.getAddress();
   // Export address to frontend
   exportAddresses(
-    'LotteryPlatform',
+    'ShifumiGame',
     address,
     process.env.HARDHAT_NETWORK || 'localhost',
   );

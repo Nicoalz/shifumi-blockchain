@@ -286,6 +286,6 @@ const lotteryContractAddressBaseSepolia =
 export const lotteryContract: TContract = {
   abi: lotteryContractAbi,
   address: {
-    [chainIds.sepolia]: lotteryContractAddressBaseSepolia, // chainId => address
+    [chainIds.baseSepolia]: lotteryContractAddressBaseSepolia, // chainId => address
   },
 };
