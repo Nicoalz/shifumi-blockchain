@@ -262,4 +262,61 @@ describe('ShifumiGame', function () {
       expect(games.length).to.equal(2);
     });
   });
+
+  describe('Withdrawal', function () {
+    beforeEach(async function () {
+      await shifumiGame.connect(player1).createGame({ value: betAmounts[0] });
+      // win a game
+      const gameId = 1;
+      await shifumiGame
+        .connect(player2)
+        .joinGame(gameId, { value: betAmounts[0] });
+
+      const commitment1 = createCommitment(Choice.Rock, 'salt1');
+      const commitment2 = createCommitment(Choice.Scissors, 'salt2');
+
+      // Commit choices
+
+      await shifumiGame.connect(player1).commitChoice(gameId, commitment1);
+      await shifumiGame.connect(player2).commitChoice(gameId, commitment2);
+
+      // Reveal choices
+
+      await shifumiGame
+        .connect(player1)
+        .revealChoice(gameId, Choice.Rock, ethers.encodeBytes32String('salt1'));
+
+      await shifumiGame
+        .connect(player2)
+        .revealChoice(
+          gameId,
+          Choice.Scissors,
+          ethers.encodeBytes32String('salt2'),
+        );
+    });
+
+    it('Should allow withdrawal of player balance', async function () {
+      const player1GameBalance = await shifumiGame.playerBalances(
+        player1.address,
+      );
+      const player1InitialWalletBalance = await player1.provider.getBalance(
+        player1.address,
+      );
+
+      expect(player1GameBalance).to.be.greaterThan(0);
+
+      const tx = await shifumiGame.connect(player1).withdrawBalance();
+      await tx.wait();
+
+      const playerBalance = await shifumiGame.playerBalances(player1.address);
+      expect(playerBalance).to.equal(0);
+
+      const player1WalletBalanceAfterWithdraw =
+        await player1.provider.getBalance(player1.address);
+
+      expect(player1WalletBalanceAfterWithdraw).to.be.greaterThan(
+        player1InitialWalletBalance,
+      );
+    });
+  });
 });
