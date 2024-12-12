@@ -9,7 +9,7 @@ Si les joueurs font match nul, ils récupèrent leur mise.
 
 ### Modèle économique:
 
-- 5% de commission sur chaque partie s'il y a un gagnant, transféré au FeeCollector (initié au moment du déploiement du contrat)
+- 5% de commission sur chaque partie s'il y a un gagnant, transféré au FeeCollector (initié au moment du déploiement du contrat (multisig de la team))
 - (Possibilité de token, détaillé dans les pistes futures)
 
 ### Tech:
@@ -33,9 +33,10 @@ Si les joueurs font match nul, ils récupèrent leur mise.
 
 ### Pistes futures :
 
+- Finir l'intégration du SC dans le front
 - Ajouter des fonctions pour simplifier le front, comme getMyGames, etc
+-  Miser des ERC20 comme des stablecoins pour avoir une base de mise stable.
 - Ajout de la possibilité de jouer contre l'ordinateur, avec de l'aléatoire via un oracle (Chainlink VRF)
 - Création d'un token, qui pourrait avoir des avantages dans notre jeu.
   Par exemple si vous possédez et stakez notre tokens, vous pouvez avoir une réduction de fees, ou meme des bonus de gains.
   Vous pourriez également voter pour des propositions de la communauté, etc.
-- Miser des ERC20 comme des stablecoins pour avoir une base de mise stable.
